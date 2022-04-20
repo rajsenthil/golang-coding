@@ -20,7 +20,11 @@ type QueueArray struct {
 }
 
 func (n *QueueArrayNode) String() string {
-	return fmt.Sprintf("Node val: %s", n.val)
+	if n != nil {
+		return fmt.Sprintf("Node val: %s", n.val)
+	} else {
+		return ""
+	}
 }
 
 func (q *QueueArray) String() string {
@@ -52,9 +56,8 @@ func (q *QueueArray) dequeueArray() (*QueueArrayNode, error) {
 	head := q.array[0]
 	for i := 0; i < len(q.array)-1; i++ {
 		q.array[i] = q.array[i+1]
-		log.Printf("head: %s, tailPos: %d", head.String(), q.tailPos)
 	}
 	q.tailPos = q.tailPos - 1
-	log.Printf("Queue after dequeuing: %s", q.String())
+	log.Printf("Queue after dequeueing head: %v is : %v", head, q.String())
 	return head, nil
 }
