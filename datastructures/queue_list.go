@@ -37,7 +37,7 @@ func (q *QueueList) String() string {
 	return s
 }
 
-func (q *QueueList) queue(n *QueueListNode) *QueueListNode {
+func (q *QueueList) queueList(n *QueueListNode) *QueueListNode {
 	if q.head == nil || q.head.val == "" {
 		q.head = n
 		q.tail = n
@@ -58,7 +58,7 @@ func (q *QueueList) queue(n *QueueListNode) *QueueListNode {
 	return q.head
 }
 
-func (q *QueueList) dequeue() (*QueueListNode, error) {
+func (q *QueueList) dequeueList() (*QueueListNode, error) {
 	head := q.head
 	if head == nil {
 		return head, errors.New("Empty Queue")
@@ -67,7 +67,7 @@ func (q *QueueList) dequeue() (*QueueListNode, error) {
 	return head, nil
 }
 
-func (q *QueueList) dequeueFromTail() *QueueListNode {
+func (q *QueueList) dequeueListFromTail() *QueueListNode {
 	curr := q.head.next
 	prev := q.head
 	log.Printf("curr type: %v", reflect.ValueOf(curr).Kind())

@@ -13,12 +13,12 @@ func TestQueue(t *testing.T) {
 	node1 := QueueListNode{val: "1"}
 	head := QueueListNode{val: "0"}
 	q := QueueList{}
-	q.queue(&head)
-	q.queue(&node1)
-	q.queue(&node2)
-	q.queue(&node3)
-	q.queue(&node4)
-	q.queue(&node5)
+	q.queueList(&head)
+	q.queueList(&node1)
+	q.queueList(&node2)
+	q.queueList(&node3)
+	q.queueList(&node4)
+	q.queueList(&node5)
 	log.Printf("Queue: %v", q.String())
 }
 
@@ -30,15 +30,15 @@ func TestDequeue(t *testing.T) {
 	node1 := QueueListNode{val: "1"}
 	head := QueueListNode{val: "0"}
 	q := QueueList{}
-	q.queue(&head)
-	q.queue(&node1)
-	q.queue(&node2)
-	q.queue(&node3)
-	q.queue(&node4)
-	q.queue(&node5)
+	q.queueList(&head)
+	q.queueList(&node1)
+	q.queueList(&node2)
+	q.queueList(&node3)
+	q.queueList(&node4)
+	q.queueList(&node5)
 
 	for i := 0; i <= 10; i++ {
-		curr, err := q.dequeue()
+		curr, err := q.dequeueList()
 		if err == nil {
 			log.Printf("Dequeued Node: %v", curr.String())
 		} else {
