@@ -1,4 +1,4 @@
-package algorithms
+package datastructures
 
 func gridTravel(m int, n int) int64 {
   memoize2 := make([][]int64, m+1)
