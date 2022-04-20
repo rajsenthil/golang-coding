@@ -7,24 +7,24 @@ import (
 	"reflect"
 )
 
-type QueueNode struct {
+type QueueListNode struct {
 	val  string
-	next *QueueNode
+	next *QueueListNode
 }
 
-type Queue struct {
-	head *QueueNode
-	tail *QueueNode
+type QueueList struct {
+	head *QueueListNode
+	tail *QueueListNode
 }
 
-func (n *QueueNode) String() string {
+func (n *QueueListNode) String() string {
 	if n == nil {
 		return fmt.Sprintf("Node: NONE")
 	}
 	return fmt.Sprintf("Node: %s", n.val)
 }
 
-func (q *Queue) String() string {
+func (q *QueueList) String() string {
 	log.Printf("Printing Queue")
 	node := q.head
 	log.Printf("Head: %v", node.String())
@@ -37,7 +37,7 @@ func (q *Queue) String() string {
 	return s
 }
 
-func (q *Queue) queue(n *QueueNode) *QueueNode {
+func (q *QueueList) queue(n *QueueListNode) *QueueListNode {
 	if q.head == nil || q.head.val == "" {
 		q.head = n
 		q.tail = n
@@ -58,7 +58,7 @@ func (q *Queue) queue(n *QueueNode) *QueueNode {
 	return q.head
 }
 
-func (q *Queue) dequeue() (*QueueNode, error) {
+func (q *QueueList) dequeue() (*QueueListNode, error) {
 	head := q.head
 	if head == nil {
 		return head, errors.New("Empty Queue")
@@ -67,7 +67,7 @@ func (q *Queue) dequeue() (*QueueNode, error) {
 	return head, nil
 }
 
-func (q *Queue) dequeueFromTail() *QueueNode {
+func (q *QueueList) dequeueFromTail() *QueueListNode {
 	curr := q.head.next
 	prev := q.head
 	log.Printf("curr type: %v", reflect.ValueOf(curr).Kind())

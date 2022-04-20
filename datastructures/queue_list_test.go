@@ -6,13 +6,13 @@ import (
 )
 
 func TestQueue(t *testing.T) {
-	node5 := QueueNode{val: "5"}
-	node4 := QueueNode{val: "4"}
-	node3 := QueueNode{val: "3"}
-	node2 := QueueNode{val: "2"}
-	node1 := QueueNode{val: "1"}
-	head := QueueNode{val: "0"}
-	q := Queue{}
+	node5 := QueueListNode{val: "5"}
+	node4 := QueueListNode{val: "4"}
+	node3 := QueueListNode{val: "3"}
+	node2 := QueueListNode{val: "2"}
+	node1 := QueueListNode{val: "1"}
+	head := QueueListNode{val: "0"}
+	q := QueueList{}
 	q.queue(&head)
 	q.queue(&node1)
 	q.queue(&node2)
@@ -23,13 +23,13 @@ func TestQueue(t *testing.T) {
 }
 
 func TestDequeue(t *testing.T) {
-	node5 := QueueNode{val: "5"}
-	node4 := QueueNode{val: "4"}
-	node3 := QueueNode{val: "3"}
-	node2 := QueueNode{val: "2"}
-	node1 := QueueNode{val: "1"}
-	head := QueueNode{val: "0"}
-	q := Queue{}
+	node5 := QueueListNode{val: "5"}
+	node4 := QueueListNode{val: "4"}
+	node3 := QueueListNode{val: "3"}
+	node2 := QueueListNode{val: "2"}
+	node1 := QueueListNode{val: "1"}
+	head := QueueListNode{val: "0"}
+	q := QueueList{}
 	q.queue(&head)
 	q.queue(&node1)
 	q.queue(&node2)
