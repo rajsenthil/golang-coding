@@ -17,6 +17,9 @@ type Queue struct {
 }
 
 func (n *QueueNode) String() string {
+	if n == nil {
+		return fmt.Sprintf("Node: NONE")
+	}
 	return fmt.Sprintf("Node: %s", n.val)
 }
 
@@ -54,25 +57,13 @@ func (q *Queue) queue(n *QueueNode) *QueueNode {
 	return q.head
 }
 
-func (q *Queue) dequeue() QueueNode {
-	curr := QueueNode{}
-	if q == nil || &q.head == nil {
-		return curr
-	}
-	curr = *q.head
-	log.Printf("Current Head: %v", curr.String())
-	prev := QueueNode{}
-	for &curr != nil {
-		if &curr != nil {
-			prev = curr
-			curr = *curr.next
-		}
-		log.Printf("Previous Node: %v", prev.String())
-	}
-	return QueueNode{}
+func (q *Queue) dequeue() *QueueNode {
+	head := q.head
+	q.head = q.head.next
+	return head
 }
 
-func (q *Queue) dequeue2() *QueueNode {
+func (q *Queue) dequeueFromTail() *QueueNode {
 	curr := q.head.next
 	prev := q.head
 	log.Printf("curr type: %v", reflect.ValueOf(curr).Kind())

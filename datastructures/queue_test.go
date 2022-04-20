@@ -38,7 +38,7 @@ func TestDequeue(t *testing.T) {
 	q.queue(&node5)
 
 	for i := 0; i <= 5; i++ {
-		curr := q.dequeue2()
+		curr := q.dequeue()
 		log.Printf("Dequeued Node: %v", curr.String())
 	}
 }
