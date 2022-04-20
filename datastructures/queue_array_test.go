@@ -56,3 +56,34 @@ func TestAddNodeToQueueMoreThan10(t *testing.T) {
 	}
 	log.Printf("Queue: %s", queue.String())
 }
+
+func TestQueueArray(t *testing.T) {
+	node0 := QueueArrayNode{val: "0"}
+	node1 := QueueArrayNode{val: "1"}
+	node2 := QueueArrayNode{val: "2"}
+	node3 := QueueArrayNode{val: "3"}
+	node4 := QueueArrayNode{val: "4"}
+	node5 := QueueArrayNode{val: "5"}
+	node6 := QueueArrayNode{val: "6"}
+	node7 := QueueArrayNode{val: "7"}
+	node8 := QueueArrayNode{val: "8"}
+	node9 := QueueArrayNode{val: "9"}
+	queue := QueueArray{tailPos: -1}
+	queue.queueArray(&node0)
+	queue.queueArray(&node1)
+	queue.queueArray(&node2)
+	queue.queueArray(&node3)
+	queue.queueArray(&node4)
+	queue.queueArray(&node5)
+	queue.queueArray(&node6)
+	queue.queueArray(&node7)
+	queue.queueArray(&node8)
+	queue.queueArray(&node9)
+
+	for i := 0; i < len(queue.array); i++ {
+		n, err := queue.dequeueArray()
+		if err == nil {
+			log.Printf("Node: %s", n.String())
+		}
+	}
+}

@@ -3,6 +3,7 @@ package datastructures
 import (
 	"errors"
 	"fmt"
+	"log"
 )
 
 type QueueArrayNode struct {
@@ -27,8 +28,8 @@ func (q *QueueArray) String() string {
 	if q.array[0] == nil {
 		return s
 	}
-	for i := 0; i < q.tailPos; i++ {
-		s = s + fmt.Sprintf(q.array[i].String()) + " ==> "
+	for i := 0; i <= q.tailPos; i++ {
+		s = s + fmt.Sprint(q.array[i].String()) + " ==> "
 	}
 	return s
 }
@@ -37,20 +38,23 @@ func (q *QueueArray) queueArray(n *QueueArrayNode) (*QueueArray, error) {
 	if q.tailPos >= QUEUE_SIZE-1 {
 		return nil, errors.New("Queue reached its capacity")
 	}
-	q.array[q.tailPos] = n
 	q.tailPos = q.tailPos + 1
+	q.array[q.tailPos] = n
+	log.Printf("Tail position after adding: %d", q.tailPos)
 	return q, nil
 }
 
 func (q *QueueArray) dequeueArray() (*QueueArrayNode, error) {
-	if len(q.array) == 0 {
+	if len(q.array) == 0 || q.tailPos < 0 {
 		return nil, errors.New("Queue is empty")
 	}
-
+	log.Printf("Length of array: %d", len(q.array))
 	head := q.array[0]
-	for i := 1; i < len(q.array)-1; i++ {
+	for i := 0; i < len(q.array)-1; i++ {
 		q.array[i] = q.array[i+1]
-		q.tailPos = q.tailPos - 1
+		log.Printf("head: %s, tailPos: %d", head.String(), q.tailPos)
 	}
+	q.tailPos = q.tailPos - 1
+	log.Printf("Queue after dequeuing: %s", q.String())
 	return head, nil
 }
