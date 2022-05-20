@@ -1,0 +1,59 @@
+2022/04/30 08:23:42 ith: 0, Vertex: {A false}
+2022/04/30 08:23:42 Connected vertices: []                                                           
+2022/04/30 08:23:42 ith: 1, Vertex: {B false}                                                        
+2022/04/30 08:23:42 Connected vertices: [{A false}]                                                  
+2022/04/30 08:23:42 ith: 0, Vertex: {A false}                                                        
+2022/04/30 08:23:42 Connected vertices: []                                                           
+2022/04/30 08:23:42 ith: 2, Vertex: {C false}                                                        
+2022/04/30 08:23:42 Connected vertices: [{B false}]
+2022/04/30 08:23:42 ith: 0, Vertex: {B false}                                                                                                                  2022/04/30 08:23:42 Connected vertices: [{A false}]
+2022/04/30 08:23:42 ith: 0, Vertex: {A false}                                                        
+2022/04/30 08:23:42 Connected vertices: []   
+2022/04/30 08:23:42 ith: 3, Vertex: {D false}                                                        
+2022/04/30 08:23:42 Connected vertices: [{B false}]
+2022/04/30 08:23:42 ith: 0, Vertex: {B false}
+2022/04/30 08:23:42 Connected vertices: [{A false}]
+2022/04/30 08:23:42 ith: 0, Vertex: {A false}
+2022/04/30 08:23:42 Connected vertices: []
+2022/04/30 08:23:42 ith: 4, Vertex: {E false}
+2022/04/30 08:23:42 Connected vertices: [{C false}]
+2022/04/30 08:23:42 ith: 0, Vertex: {C false}
+2022/04/30 08:23:42 Connected vertices: [{B false}]
+2022/04/30 08:23:42 ith: 0, Vertex: {B false}
+2022/04/30 08:23:42 Connected vertices: [{A false}]
+2022/04/30 08:23:42 ith: 0, Vertex: {A false}
+2022/04/30 08:23:42 Connected vertices: []
+2022/04/30 08:23:42 ith: 5, Vertex: {F false}                                                                                                                                                       [10/77]
+2022/04/30 08:23:42 Connected vertices: [{C false}]
+2022/04/30 08:23:42 ith: 0, Vertex: {C false}
+2022/04/30 08:23:42 Connected vertices: [{B false}]
+2022/04/30 08:23:42 ith: 0, Vertex: {B false}
+2022/04/30 08:23:42 Connected vertices: [{A false}]
+2022/04/30 08:23:42 ith: 0, Vertex: {A false}
+2022/04/30 08:23:42 Connected vertices: []
+2022/04/30 08:23:42 ith: 6, Vertex: {G false}
+2022/04/30 08:23:42 Connected vertices: [{D false}]
+2022/04/30 08:23:42 ith: 0, Vertex: {D false}
+2022/04/30 08:23:42 Connected vertices: [{B false}]
+2022/04/30 08:23:42 ith: 0, Vertex: {B false}
+2022/04/30 08:23:42 Connected vertices: [{A false}]
+2022/04/30 08:23:42 ith: 0, Vertex: {A false}
+2022/04/30 08:23:42 Connected vertices: []
+2022/04/30 08:23:42 ith: 7, Vertex: {H false}
+2022/04/30 08:23:42 Connected vertices: [{D false}]
+2022/04/30 08:23:42 ith: 0, Vertex: {D false}
+2022/04/30 08:23:42 Connected vertices: [{B false}]
+2022/04/30 08:23:42 ith: 0, Vertex: {B false}
+2022/04/30 08:23:42 Connected vertices: [{A false}]
+2022/04/30 08:23:42 ith: 0, Vertex: {A false}
+2022/04/30 08:23:42 Connected vertices: []
+2022/04/30 08:23:42 ith: 8, Vertex: {I false}
+2022/04/30 08:23:42 Connected vertices: [{D false}]
+2022/04/30 08:23:42 ith: 0, Vertex: {D false}
+2022/04/30 08:23:42 Connected vertices: [{B false}]
+2022/04/30 08:23:42 ith: 0, Vertex: {B false}
+2022/04/30 08:23:42 Connected vertices: [{A false}]
+2022/04/30 08:23:42 ith: 0, Vertex: {A false}
+2022/04/30 08:23:42 Connected vertices: []
+2022/04/30 08:23:42 DFS Result: [{A false} {B false} {C false} {D false} {E false} {F false} {G false} {H false} {I false} {A false} {B false} {C false} {D false} {E false} {F false} {G false} {H false} 
+{I false}]

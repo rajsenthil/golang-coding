@@ -1,3 +1,0 @@
-package datastructures
-
-func bfs() {}
