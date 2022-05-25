@@ -11,20 +11,22 @@ import (
 // example-2: targetStr := "abc", given array:= {"ab", "bc"} returns false
 func can_construct(targetStr string, arr []string) bool {
 	log.Printf("Target: %s", targetStr)
-	if targetStr == "\000" {
-		return false
-	}
+
+	// if targetStr == "\000" {
+	// 	return false
+	// }
+
 	if targetStr == "" {
 		return true
 	}
 	for _, str := range arr {
 		log.Printf("current target: %s and current string value: %s", targetStr, str)
-		newTarget := strings.ReplaceAll(targetStr, str, "")
-		log.Printf("New Target: %s", newTarget)
-		if strings.Compare(targetStr, newTarget) == 0 {
-			log.Printf("the chars in %s was not found in target %s", str, targetStr)
-		} else if can_construct(newTarget, arr) {
-			return true
+		if strings.Index(targetStr, str) == 0 {
+			newTarget := strings.TrimPrefix(targetStr, str)
+			log.Printf("New Target: %s", newTarget)
+			if can_construct(newTarget, arr) {
+				return true
+			}
 		}
 	}
 	return false

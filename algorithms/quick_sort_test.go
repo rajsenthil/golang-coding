@@ -17,6 +17,7 @@ func TestQuickSortPartition(t *testing.T) {
 func TestQuickSort(t *testing.T) {
 	input := []int{12, 9, 6, 13, 8, 19, 23, 4}
 	input = []int{8, 7, 6, 1, 0, 9, 2}
+	//input = []int{1, 1, -1, 0, 0, -1, 1, 0, -1}
 	result := quick_sort(input)
 	log.Printf("Sorted Result: %v", result)
 }
