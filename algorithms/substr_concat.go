@@ -73,7 +73,7 @@ func matched_position(text string, match_str string) []int {
 	}
 
 	for i, _ := range result {
-		result[i] = result[i] + 3*i
+		result[i] = result[i] + l*i
 	}
 
 	return result
