@@ -36,13 +36,19 @@ func reverse_k_nodes(curr_head *Node, k int) *Node {
 }
 
 func reverse_k_nodes_helper(curr_head *Node, next_head *Node, k int) *Node {
-	if next_head == nil {
-		return curr_head
-	}
-
 	curr := curr_head
 	for idx := 0; idx < k; idx++ {
-		log.Printf("reverse_k_nodes_helper loop start::: curr node: %d", curr.val)
+		if curr == nil {
+			return curr_head
+		}
+		curr = curr.next
+	}
+
+	curr = curr_head
+	for idx := 0; idx < k; idx++ {
+		if curr == nil {
+			break
+		}
 		next := curr.next
 		curr.next = prev
 		prev = curr
