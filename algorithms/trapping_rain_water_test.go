@@ -16,7 +16,7 @@ func TestTrappingRainWaterLeftAndRight(t *testing.T) {
 	height = []int{4, 2, 0, 3, 2, 5}
 	height = []int{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1}
 	// height = []int{1, 0, 3}
-	result := findNearMaxLeftRight(height, 5)
+	result := findNearMaxLeftRight(height, 11)
 	log.Printf("trapping_rain_water with heights: %v is LEFT: %d, RIGHT: %d", height, result.maxLeftVal, result.maxRightVal)
 	log.Printf("Position of maxLeft and MaxRight are: %d, %d", result.maxLeftPos, result.maxRightPos)
 }
