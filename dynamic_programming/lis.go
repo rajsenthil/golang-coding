@@ -26,11 +26,14 @@ func lis_brute(input []int) [][]int {
 		return [][]int{{}}
 	}
 	log.Printf("Input param: %v", input)
-	fi := input[0]
-	oi := input[1:]
+	li := input[n-1]
+	oi := []int{}
+	if n-2 >= 0 {
+		oi = input[:n-1]
+	}
 	result := lis_brute(oi)
-	log.Printf("Result: %v, new char: %d", result, fi)
-	combo := combine(result, fi)
+	log.Printf("Result: %v, new char: %d", result, li)
+	combo := combine(result, li)
 	log.Printf("Result after combo: %v", result)
 	log.Printf("Combo: %v", combo)
 	return combo
