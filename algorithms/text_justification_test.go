@@ -8,22 +8,30 @@ import (
 func TestTextJustification(t *testing.T) {
 	log.Printf("TestTextJustification")
 	words := []string{"This", "is", "an", "example", "of", "text", "justification."}
+	words = []string{"What", "must", "be", "acknowledgment", "shall", "be"}
+	words = []string{"ask", "not", "what", "your", "country", "can", "do", "for", "you", "ask", "what", "you", "can", "do", "for", "your", "country"}
 	maxWidth := 16
 	results := text_justification(words, maxWidth)
 	log.Printf("length: %d, results: %v", len(results), results)
 	for i, _ := range results {
-		log.Printf("%s", results[i])
+		log.Printf("results[%d]: %s and it's lebgth: %d", i, results[i], len(results[i]))
 	}
 }
 
 func TestFormatText(t *testing.T) {
 	input := "one two"
-	maxWidth := 18
+	input = "justification."
+	maxWidth := 16
 	result := format_text(input, maxWidth)
-	log.Printf("result: %s \n\t\tand  length: %d", result, len(result))
+	log.Printf("result: \n%s \n\t\tand  length: %d", result, len(result))
 }
 
 /**
+Output
+["This    is    an","example  of text","justification. "]
+Expected
+["This    is    an","example  of text","justification.  "]
+
 Given an array of strings words and a width maxWidth, format the text such that each line has exactly maxWidth characters and is fully (left and right) justified.
 
 You should pack your words in a greedy approach; that is, pack as many words as you can in each line. Pad extra spaces ' ' when necessary so that each line has exactly maxWidth characters.

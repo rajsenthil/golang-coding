@@ -15,14 +15,19 @@ func text_justification(words []string, maxWidth int) []string {
 
 func text_justification_helper(words []string, maxWidth int, results []string) []string {
 	if len(words) < 1 {
+		// results[len(results)-1] = format_text(results[len(results)-1], maxWidth)
+		if maxWidth-len(results[len(results)-1])-1 > 0 {
+			results[len(results)-1] = results[len(results)-1] + strings.Repeat(" ", maxWidth-len(results[len(results)-1]))
+		}
 		return results
 	}
 	log.Printf("Words: %v, maxWidth: %d, results: %v", words, maxWidth, results)
 
 	last_item := results[len(results)-1]
 	log.Printf("The current last item: %s", last_item)
-	if len(words[0]+" "+last_item) > maxWidth {
-		results[len(results)-1] = format_text(last_item[0:len(last_item)-1], maxWidth)
+	if len(words[0]+" "+last_item)-1 > maxWidth {
+		// results[len(results)-1] = format_text(last_item[0:len(last_item)-1], maxWidth)
+		results[len(results)-1] = format_text(last_item, maxWidth)
 		results = append(results, "")
 		log.Printf("Length of string array: %d", len(results))
 		log.Printf("Results: %v", results)
@@ -46,7 +51,9 @@ func format_text(input string, maxWidth int) string {
 	}
 	words := strings.Fields(input)
 	nw := len(words)
-
+	if nw == 1 {
+		return input + strings.Repeat(" ", d)
+	}
 	n_s := int(d / (nw - 1))
 	log.Printf("input: %s, input length: %d, diff: %d, maximum width: %d, number of words: %d, number of spaces: %d", input, l, d, maxWidth, nw, n_s)
 

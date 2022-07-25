@@ -3,5 +3,6 @@ go 1.18
 use (
 	algorithms
 	datastructures
-	dynamic-programming
+	dynamic_programming
+	test
 )
