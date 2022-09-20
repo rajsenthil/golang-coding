@@ -4,5 +4,4 @@ use (
 	algorithms
 	datastructures
 	dynamic_programming
-	test
 )
