@@ -42,7 +42,7 @@ func (g *Graph) addVertex(n Vertex) {
 }
 
 func (g *Graph) addEdge(from Vertex, to Vertex) {
-o  log.Printf("Adding edge: from %v to %v", from.String(), to.String())
+  log.Printf("Adding edge: from %v to %v", from.String(), to.String())
   vertices := append(g.edges[from], to)
   g.edges[from] = vertices
 }
